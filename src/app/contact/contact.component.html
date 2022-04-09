@@ -1,0 +1,45 @@
+
+<h1> {{mainString}} </h1>
+
+<div class="container">
+    <div *ngIf="isSubmitted === false">
+        <div class="detail detail--">
+            <label for="name">Name</label>
+            <input type="text" id="name" [(ngModel)]="nameText" >
+            <p>Text: {{nameText}} </p>
+        </div>
+        <div class="detail detail--">
+            <label for="email">Email</label>
+            <input type="email" id="email" [(ngModel)]="emailText" >
+            <p>Text: {{emailText}}  </p>
+        </div>
+        <div class="detail detail--">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" [(ngModel)]="phoneText" >
+            <p>Text: {{phoneText}}  </p>
+        </div>
+    
+        <button class="btn"
+            (click)="isSubmitted = true"
+        >Submit</button>
+    </div>
+
+    <div class="submitted" *ngIf="isSubmitted === true" >
+        <p> {{nameText}} </p>
+        <p> {{emailText}} </p>
+        <p> {{phoneText}} </p>
+
+        <button class="btn"
+            (click)="isSubmitted = false"
+        >Again</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
